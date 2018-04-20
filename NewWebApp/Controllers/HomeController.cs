@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -10,7 +11,10 @@ namespace NewWebApp.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            var env  = ConfigurationManager.AppSettings.Get("Env");
+
+            return Content(env);
+            //return View();
         }
 
         public ActionResult About()
