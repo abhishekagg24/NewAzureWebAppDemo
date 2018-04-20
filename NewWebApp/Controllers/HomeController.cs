@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -13,8 +14,11 @@ namespace NewWebApp.Controllers
         {
             var env  = ConfigurationManager.AppSettings.Get("Env");
 
-            return Content(env);
-            //return View();
+            Trace.Write("We are in indxed contoller !");
+            Trace.Write("The environment is " + env);
+
+            //return Content(env);
+            return View();
         }
 
         public ActionResult About()
